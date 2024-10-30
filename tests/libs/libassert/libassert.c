@@ -6,7 +6,7 @@
 /*   By: susami <susami@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 17:34:09 by susami            #+#    #+#             */
-/*   Updated: 2024/10/30 14:00:35 by ywakamiy         ###   ########.fr       */
+/*   Updated: 2024/10/30 16:06:46 by ywakamiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,29 @@
 #include <string.h>
 #include <stdarg.h>
 #include <stdlib.h> 
-#include <malloc.h>
+
+typedef struct {
+    void *ptr;
+    size_t size;
+} MemInfo;
+
+#define MAX_ALLOCATIONS 1024
+static MemInfo allocations[MAX_ALLOCATIONS];
+static size_t allocation_count = 0;
+
+#if defined(__linux__)
+    #include <malloc.h>
+#else
+    size_t malloc_usable_size(void *ptr) {
+        for (size_t i = 0; i < allocation_count; ++i) {
+            if (allocations[i].ptr == ptr) {
+                return allocations[i].size;
+            }
+        }
+        fprintf(stderr, "Error: Pointer not found in allocation list.\n");
+        return 0;
+    }
+#endif
 
 size_t malloc_size(void *ptr) {
     return malloc_usable_size(ptr);
