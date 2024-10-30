@@ -6,7 +6,7 @@
 /*   By: susami <susami@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 17:34:09 by susami            #+#    #+#             */
-/*   Updated: 2022/04/22 11:06:29 by susami           ###   ########.fr       */
+/*   Updated: 2024/10/30 13:58:10 by ywakamiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdarg.h>
-#include <malloc/malloc.h>
+ #include <stdlib.h> 
+
 #define ANSI_COLOR_RED     "\x1b[1;31m"
 #define ANSI_COLOR_GREEN   "\x1b[1;32m"
 #define ANSI_COLOR_YELLOW  "\x1b[1;33m"
