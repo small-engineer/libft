@@ -15,7 +15,7 @@
 static unsigned int	count_words(const char *s, char c)
 {
 	unsigned int	count;
-	t_bool			in_word;
+	bool			in_word;
 
 	count = 0;
 	in_word = false;

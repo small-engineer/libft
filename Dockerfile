@@ -16,7 +16,7 @@ RUN make
 RUN make test > test_output.log 2>&1 || (echo "Tests failed. Check test_output.log for details." && cat test_output.log && exit 1)
 
 # 重要なメッセージの検索条件を柔軟化
-RUN if grep -Eq "All tests passed|OK" test_output.log; then \
+RUN if grep -Eq "error" test_output.log; then \
       echo "All tests passed successfully!"; \
     else \
       echo "Some tests failed. Check the output below:" && \

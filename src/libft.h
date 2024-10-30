@@ -23,11 +23,11 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef enum t_bool
+typedef enum bool
 {
 	false = 0,
 	true = 1
-}					t_bool;
+}					bool;
 
 size_t				ft_strlen(const char *str);
 size_t				ft_strlcpy(char *dst, const char *src, size_t len);

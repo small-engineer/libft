@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static t_bool	ft_isupper(char c)
+static bool	ft_isupper(char c)
 {
 	return (c >= 'A' && c <= 'Z');
 }

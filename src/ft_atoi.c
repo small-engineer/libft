@@ -20,7 +20,7 @@ static int	ft_isspace(int c)
 int	ft_atoi(const char *str)
 {
 	int		total;
-	t_bool	sign;
+	bool	sign;
 
 	total = 0;
 	sign = false;

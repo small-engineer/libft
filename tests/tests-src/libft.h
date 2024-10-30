@@ -6,28 +6,23 @@
 /*   By: ywakamiy <ywakamiy@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 09:08:48 by ywakamiy          #+#    #+#             */
-/*   Updated: 2024/10/30 10:51:24 by ywakamiy         ###   ########.fr       */
+/*   Updated: 2024/10/30 18:21:07 by ywakamiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdint.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
-typedef enum t_bool
-{
-	false = 0,
-	true = 1
-}					t_bool;
 
 size_t				ft_strlen(const char *str);
 size_t				ft_strlcpy(char *dst, const char *src, size_t len);

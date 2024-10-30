@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static t_bool	ft_islower(int c)
+static bool	ft_islower(int c)
 {
 	return (c >= 'a' && c <= 'z');
 }
