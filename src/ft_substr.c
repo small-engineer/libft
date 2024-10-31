@@ -26,10 +26,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		ret_len = s_len - start;
 	else
 		ret_len = len;
-	ret = (char *)malloc(ret_len + 1);
+	ret = (char *)ft_calloc(ret_len + 1, sizeof(char));
 	if (!ret)
 		return (NULL);
 	ft_strlcpy(ret, s + start, ret_len + 1);
-	ret[ret_len] = '\0';
 	return (ret);
 }

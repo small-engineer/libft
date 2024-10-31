@@ -6,7 +6,7 @@
 /*   By: ywakamiy <ywakamiy@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 20:17:46 by ywakamiy          #+#    #+#             */
-/*   Updated: 2024/10/26 23:58:09 by ywakamiy         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:23:58 by ywakamiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 static unsigned int	count_words(const char *s, char c)
 {
-	unsigned int	count;
-	bool			in_word;
+	size_t	count;
+	bool	in_word;
 
 	count = 0;
 	in_word = false;
 	while (*s)
 	{
-		if (!in_word)
+		if (!in_word && *s != c)
 		{
 			in_word = true;
 			count++;
@@ -46,10 +46,10 @@ static char	*word_dup(const char *s, int start, int end)
 	return (word);
 }
 
-static void	handle_word(char const *s, char c, char **ret, int *index)
+static void	handle_word(char const *s, char c, char **ret, size_t *index)
 {
-	int	i;
-	int	start;
+	size_t	i;
+	int		start;
 
 	i = 0;
 	start = -1;
@@ -80,9 +80,9 @@ static void	free_split(char **split)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**ret;
-	int		i;
-	int		ii;
+	char		**ret;
+	size_t		i;
+	size_t		ii;
 
 	if (!s)
 		return (NULL);
