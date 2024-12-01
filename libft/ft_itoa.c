@@ -56,7 +56,7 @@ char	*ft_itoa(int n)
 
 	len = get_digit_i(n);
 	ret = (char *)ft_calloc((len + 1), sizeof(char));
-	if (ret == NULL)
+	if (!ret)
 		return (NULL);
 	ret[len] = '\0';
 	num = handle_sign(n, ret);
